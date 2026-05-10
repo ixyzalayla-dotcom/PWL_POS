@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StokController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SupplierController;
@@ -92,3 +93,16 @@ Route::group(['prefix' => 'barang'], function () {
     Route::put('/{id}', [BarangController::class, 'update']);     // menyimpan perubahan data barang
     Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data barang
 }); 
+// Route untuk Stok Barang
+Route::group(['prefix' => 'stok'], function () {
+    Route::get('/', [StokController::class, 'index']);
+    Route::post('/list', [StokController::class, 'list']);
+});
+
+Route::group(['prefix' => 'stok'], function () {
+    Route::get('/', [StokController::class, 'index']);          // Halaman utama
+    Route::post('/list', [StokController::class, 'list']);      // Data untuk DataTable
+    Route::get('/create', [StokController::class, 'create']);    // Halaman tambah
+    Route::post('/', [StokController::class, 'store']);         // Simpan data baru
+    // ... route edit/delete jika perlu
+});

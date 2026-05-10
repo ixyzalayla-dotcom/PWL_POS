@@ -18,6 +18,5 @@ class UserModel extends Model
     public function level(): BelongsTo
 {
     // Pastikan LevelModel::class merujuk ke file yang dibuat di langkah 1
-    return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
-}
+    return $this->belongsTo(LevelModel::class, 'Level_id', 'Level_id');
 }

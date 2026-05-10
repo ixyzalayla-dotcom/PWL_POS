@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class LevelModel extends Model
 {
     protected $table = 'm_level'; // Pastikan nama tabel sesuai database
-    protected $primaryKey = 'level_id';
+    protected $primaryKey = 'Level_id';
 
     // Kolom yang boleh diisi secara massal
     protected $fillable = ['level_kode', 'level_nama'];
